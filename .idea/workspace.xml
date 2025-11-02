@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99487de9-5deb-4a4a-a8bf-cf0afa391261" name="Changes" comment="Atualiza variáveis e tipos de dados">
-      <change afterPath="$PROJECT_DIR$/bagagem_aula.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bagagem_minha_versao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/restaurante_quilo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/saldao_alegria.py" afterDir="false" />
+    <list default="true" id="99487de9-5deb-4a4a-a8bf-cf0afa391261" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fatorial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jogo_senha.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login_minha_versao.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projeto_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projeto_menu_minha_versao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bagagem_aula.py" beforeDir="false" afterPath="$PROJECT_DIR$/bagagem_aula.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,9 @@
     &quot;accountId&quot;: &quot;2acae85a-478e-4072-a71c-b724ade7e9cd&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/login.py" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -49,35 +56,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.bagagem.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bagagem_aula.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bagagem_minha_versao (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.boas_vindas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.calculadora_inteiros.executor&quot;: &quot;Run&quot;,
-    &quot;Python.entendendo_texto.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ficha_cadastral.executor&quot;: &quot;Run&quot;,
-    &quot;Python.restaurante_quilo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.saldao_alegria.executor&quot;: &quot;Run&quot;,
-    &quot;Python.variaveis_bool.executor&quot;: &quot;Run&quot;,
-    &quot;Python.velocidade_media.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.bagagem.executor": "Run",
+    "Python.bagagem_aula.executor": "Run",
+    "Python.bagagem_minha_versao (1).executor": "Run",
+    "Python.boas_vindas.executor": "Run",
+    "Python.calculadora_inteiros.executor": "Run",
+    "Python.entendendo_texto.executor": "Run",
+    "Python.fatorial.executor": "Run",
+    "Python.ficha_cadastral.executor": "Run",
+    "Python.jogo_senha.executor": "Run",
+    "Python.login.executor": "Run",
+    "Python.login_minha_versao.executor": "Run",
+    "Python.projeto_menu.executor": "Run",
+    "Python.projeto_menu_minha_versao.executor": "Run",
+    "Python.restaurante_quilo.executor": "Run",
+    "Python.saldao_alegria.executor": "Run",
+    "Python.variaveis_bool.executor": "Run",
+    "Python.velocidade_media.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.restaurante_quilo">
-    <configuration name="bagagem_aula" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Python.projeto_menu_minha_versao">
+    <configuration name="fatorial" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="entendendoVariaveis" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,7 +104,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bagagem_aula.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fatorial.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +113,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bagagem_minha_versao (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="jogo_senha" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="entendendoVariaveis" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bagagem_minha_versao.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jogo_senha.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="bagagem_minha_versao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="login_minha_versao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="entendendoVariaveis" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\kevin\OneDrive\Documentos\DEVELOPMENT\FIAP_Python_Development_80_Horas\entendendoVariaveis\bagagem_minha_versao.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/login_minha_versao.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="restaurante_quilo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="projeto_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="entendendoVariaveis" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,7 +170,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/restaurante_quilo.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projeto_menu.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="saldao_alegria" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="projeto_menu_minha_versao" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="entendendoVariaveis" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -178,7 +192,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/saldao_alegria.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projeto_menu_minha_versao.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -189,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.restaurante_quilo" />
-        <item itemvalue="Python.bagagem_aula" />
-        <item itemvalue="Python.bagagem_minha_versao (1)" />
-        <item itemvalue="Python.bagagem_minha_versao" />
-        <item itemvalue="Python.saldao_alegria" />
+        <item itemvalue="Python.projeto_menu_minha_versao" />
+        <item itemvalue="Python.projeto_menu" />
+        <item itemvalue="Python.fatorial" />
+        <item itemvalue="Python.jogo_senha" />
+        <item itemvalue="Python.login_minha_versao" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +243,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761821094442</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Atividade com if, elif, else e while">
+      <option name="closed" value="true" />
+      <created>1761914016535</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1761914016535</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Novas atividades realizadas">
+      <option name="closed" value="true" />
+      <created>1761914040429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1761914040429</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +291,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primeiros passos" />
     <MESSAGE value="Atualização das Variáveis e tipos de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização das Variáveis e tipos de dados" />
+    <MESSAGE value="Atividade com if, elif, else e while" />
+    <MESSAGE value="Novas atividades realizadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Novas atividades realizadas" />
   </component>
 </project>
