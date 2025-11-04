@@ -19,7 +19,7 @@ while True:
         y = int(input("Informe a posição Y que deseja arriscar: "))
     except ValueError:
         print("\n⚠️  Entrada inválida! Digite apenas números inteiros.")
-        input("\nPressione qualquer tecla para tentar novamente...")
+        input("\nPressione ENTER para tentar novamente...")
         continue
 
     if (x, y) in inimigos:
