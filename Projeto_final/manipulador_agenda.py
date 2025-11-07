@@ -1,8 +1,9 @@
-# Tupla que contém os contatos suportados pelo sistema
+import json
+
 contatos_suportados = ("telefone", "email", "endereco")
 
 # Dicionário de exemplo, com alguns dados padrão
-agenda = {
+agenda_exemplo = {
     "Pessoa 1":{
         "telefone": ["11 1234-56789"],
         "email": ["pessoa@email.com", "email@profissional.com"],
@@ -28,9 +29,9 @@ def contato_para_texto(nome_contato: str, **formas_contato):
 
     return formato_texto
 
-# Função de visualização da agenda_dic completa
+# Função de visualização da agenda completa
 def agenda_para_texto(**agenda_completa):
-    """Recebe um dicionário de dicionários com a agenda_dic que será
+    """Recebe um dicionário de dicionários com a agenda que será
        exibida e retorna uma string com este dicionário formatado"""
     formato_texto = ""
     for nome_contato, formas_contato in agenda_completa.items():
@@ -40,7 +41,7 @@ def agenda_para_texto(**agenda_completa):
 
 # Função para alterar o nome de um contato
 def altera_nome_contato(agenda_original: dict, nome_original: str, nome_atualizado: str):
-    """Recebe a agenda_dic original em forma de dicionário, o nome_original e o
+    """Recebe a agenda original em forma de dicionário, o nome_original e o
        nome atualizado em forma de string.
        Busca o nome original no dicionário e retorna False se não encontrar.
        Retorna True se encontrar o nome original no dicionário e fizer
@@ -65,24 +66,24 @@ def altera_forma_contato(lista_contatos: list, valor_antigo: str, novo_valor: st
         return True
     return False
 
-def exclui_contato(agenda_dic: dict, nome_contato: str):
-    """Recebe uma agenda_dic completa como dicionário e o nome do contato como string.
+def exclui_contato(agenda: dict, nome_contato: str):
+    """Recebe uma agenda completa como dicionário e o nome do contato como string.
        Caso o nome do contato não esteja nas chaves do dicionário, retornará False.
        Caso o nome do contato esteja nas chaves, o registro correspondente será
        removido e retornará True."""
-    if nome_contato in agenda_dic.keys():
-        agenda_dic.pop(nome_contato)
+    if nome_contato in agenda.keys():
+        agenda.pop(nome_contato)
         return True
     return False
 
 # Função para incluir um contato
-def inclui_contato(agenda_dic: dict, nome_contato: str, **formas_contato):
-    """Recebe uma agenda_dic completa como dicionário, o nome do novo contato
+def inclui_contato(agenda: dict, nome_contato: str, **formas_contato):
+    """Recebe uma agenda completa como dicionário, o nome do novo contato
        como string e as formas de contato em um dicionário como **kwargs.
        Não é feita nenhuma verificação, portanto se já existir um contato
        com o mesmo nome, será sobrescrito."""
     #print(formas_contato)
-    agenda_dic[nome_contato] = formas_contato
+    agenda[nome_contato] = formas_contato
 
 def inclui_forma_contato(formas_contato: dict, forma_incluida: str, valor_incluido: str):
     """Recebe um dicionário com as formas de contato, a forma de contato que será incluída ou
@@ -101,8 +102,8 @@ def inclui_forma_contato(formas_contato: dict, forma_incluida: str, valor_inclui
     return None
 
 
-def usuario_inclui_contato(agenda_dic: dict):
-    nome = input("Informe o nome do novo contato que será inserido na agenda_dic: ")
+def usuario_inclui_contato(agenda: dict):
+    nome = input("Informe o nome do novo contato que será inserido na agenda: ")
     dicionario_formas = {}
     for forma in contatos_suportados:
         resposta = input(f"Deseja inserir um {forma} para {nome.upper()}? \nSIM ou NÃO → ")
@@ -114,101 +115,136 @@ def usuario_inclui_contato(agenda_dic: dict):
             dicionario_formas[forma] = lista_contatos.copy()
             lista_contatos.clear()
     if len(dicionario_formas.keys()) > 0:
-        inclui_contato(agenda_dic, nome, **dicionario_formas)
+        inclui_contato(agenda, nome, **dicionario_formas)
         print("Inclusão bem sucedida!")
     else:
-        print("É necessário incluir pelo menos uma forma de contato!\nA agenda_dic não foi alterada.")
+        print("É necessário incluir pelo menos uma forma de contato!\nA agenda não foi alterada.")
 
-def usuario_inclui_forma_contato(agenda_dic: dict):
+def usuario_inclui_forma_contato(agenda: dict):
     #inclui_forma_contato(formas_contato: dict, forma_incluida: str, valor_incluido: str):
     nome = input("Informe o nome do contato para o qual deseja incluir formas de contato: ")
-    if nome in agenda_dic.keys():
+    if nome in agenda.keys():
         print(f"As formas de contato suportadas pelo sistemas são: {contatos_suportados}")
         forma_incluida = input("Qual forma de contato deseja incluir? ")
         if forma_incluida in contatos_suportados:
             valor_incluido = input(f"Informe o {forma_incluida} que deseja incluir: ")
-            if inclui_forma_contato(agenda_dic[nome], forma_incluida, valor_incluido):
+            if inclui_forma_contato(agenda[nome], forma_incluida, valor_incluido):
                 print("Operação bem sucedida! A nova forma de contato foi incluída!")
             else:
-                print("Ocorreu um erro durante a inserção. A agenda_dic não foi alterada.")
+                print("Ocorreu um erro durante a inserção. A agenda não foi alterada.")
         else:
-            print("A forma de contato indicada não é suportada pelo sistema. A agenda_dic não foi alterada.")
+            print("A forma de contato indicada não é suportada pelo sistema. A agenda não foi alterada.")
     else:
-        print("O contato informado não existe na agenda_dic. Não foram feitas alterações.")
+        print("O contato informado não existe na agenda. Não foram feitas alterações.")
 
-def usuario_exclui_contato(agenda_dic: dict):
+def usuario_exclui_contato(agenda: dict):
     nome = input("Informe o nome do contato que deseja excluir: ")
-    if exclui_contato(agenda_dic, nome):
+    if exclui_contato(agenda, nome):
         print("Usuário excluído com sucesso!")
     else:
-        print("Nome do usuário não localizado na agenda_dic. Não foram feitas alterações.")
+        print("Nome do usuário não localizado na agenda. Não foram feitas alterações.")
 
-def usuario_altera_nome_contato(agenda_dic: dict):
+def usuario_altera_nome_contato(agenda: dict):
     #altera_nome_contato(agenda_original: dict, nome_original: str, nome_atualizado: str):
     nome_original = input("Informe o nome do contato que deseja alterar: ")
     nome_atualizado = input("Informe o nome do novo contato: ")
-    if altera_nome_contato(agenda_dic, nome_original, nome_atualizado):
+    if altera_nome_contato(agenda, nome_original, nome_atualizado):
         print(f"O contato foi atualizado e agora se chama {nome_atualizado}")
     else:
-        print(f"O contato original não foi localizado. A agenda_dic não foi alterada.")
+        print(f"O contato original não foi localizado. A agenda não foi alterada.")
 
-def usuario_altera_forma_contato(agenda_dic: dict):
+def usuario_altera_forma_contato(agenda: dict):
     nome = input("Informe o nome do contato que deseja alterar: ")
-    if nome in agenda_dic.keys():
+    if nome in agenda.keys():
         print(f"As formas de contato suportadas pelo sistema são: {contatos_suportados}")
         forma_incluida = input("Qual forma de contato deseja incluir? ")
         if forma_incluida in contatos_suportados:
-            print(contato_para_texto(nome, **agenda_dic[nome]))
+            print(contato_para_texto(nome, **agenda[nome]))
             valor_antigo = input(f"Informe o {forma_incluida} que deseja alterar: ")
             novo_valor = input(f"Informe o novo {forma_incluida} que deseja alterar: ")
-            if altera_forma_contato(agenda_dic[nome][forma_incluida], valor_antigo, novo_valor):
+            if altera_forma_contato(agenda[nome][forma_incluida], valor_antigo, novo_valor):
                 print("Contato alterado com sucesso!")
             else:
-                print("Ocorreu um erro durante a alteração do contato. A agenda_dic não foi alterada.")
+                print("Ocorreu um erro durante a alteração do contato. A agenda não foi alterada.")
         else:
-            print(f"{forma_incluida} não é uma forma de contato suportada pelo sistema. A agenda_dic não foi alterada.")
+            print(f"{forma_incluida} não é uma forma de contato suportada pelo sistema. A agenda não foi alterada.")
     else:
-        print(f"O contato {nome} não está na agenda_dic. A agenda_dic não foi alterada.")
+        print(f"O contato {nome} não está na agenda. A agenda não foi alterada.")
 
-def usuario_contato_para_texto(agenda_dic: dict):
+def usuario_contato_para_texto(agenda: dict):
     nome = input("Informe o nome do contato que deseja exibir: ")
-    if nome in agenda_dic.keys():
-        print(contato_para_texto(nome, **agenda_dic[nome]))
+    if nome in agenda.keys():
+        print(contato_para_texto(nome, **agenda[nome]))
     else:
-        print("O contato informado não está na agenda_dic.")
+        print("O contato informado não está na agenda.")
+
+def agenda_para_txt(nome_arquivo: str, agenda):
+    if "txt" not in nome_arquivo:
+        nome_arquivo = f"{nome_arquivo}.txt"
+    with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+        arquivo.write(agenda_para_texto(**agenda))
+        print("Agenda exportada com sucesso!")
+
+def json_para_agenda(nome_arquivo: str):
+    with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
+        conteudo = arquivo.read()
+    print("Agenda carregada com sucesso!")
+    return json.loads(conteudo)
+
+def agenda_para_json(nome_arquivo: str, agenda):
+    if ".json" not in nome_arquivo:
+        nome_arquivo = f"{nome_arquivo}.json"
+    with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
+        arquivo.write(json.dumps(agenda, indent=4, ensure_ascii=False))
+        print("Agenda exportada com sucesso!")
 
 def exibe_menu():
     print("\n\n")
-    print("1 - Incluir contato na agenda_dic")
+    print("1 - Incluir contato na agenda")
     print("2 - Incluir uma forma de contato")
     print("3 - Alterar o nome de um contato")
     print("4 - Alterar uma forma de contato")
     print("5 - Exibir um contato")
-    print("6 - Exibir toda a agenda_dic")
+    print("6 - Exibir toda a agenda")
     print("7 - Excluir um contato")
-    print("8 - Sair")
+    print("8 - Exportar agenda para TXT")
+    print("9 - Exportar agenda para JSON")
+    print("10 - Importar agenda de JSON")
+    print("11 - Sair")
     print("\n")
 
 def manipulador_agenda():
-    agenda_dic = {}
+    agenda = {}
     op = 1
-    while op != 8:
+    while op != 11:
         exibe_menu()
         op = int(input("Informe a opção desejada: "))
         if op == 1:
-            usuario_inclui_contato(agenda_dic)
+            usuario_inclui_contato(agenda)
         elif op == 2:
-            usuario_inclui_forma_contato(agenda_dic)
+            usuario_inclui_forma_contato(agenda)
         elif op == 3:
-            usuario_altera_nome_contato(agenda_dic)
+            usuario_altera_nome_contato(agenda)
         elif op == 4:
-            usuario_altera_forma_contato(agenda_dic)
+            usuario_altera_forma_contato(agenda)
         elif op == 5:
-            usuario_contato_para_texto(agenda_dic)
+            usuario_contato_para_texto(agenda)
         elif op == 6:
-            print(agenda_para_texto(**agenda_dic))
+            print(agenda_para_texto(**agenda))
         elif op == 7:
-            usuario_exclui_contato(agenda_dic)
+            usuario_exclui_contato(agenda)
+        elif op == 8:
+            nome_arquivo = input("Informe o nome ou caminho do arquivo: ")
+            agenda_para_txt(nome_arquivo, agenda)
+        elif op == 9:
+            nome_arquivo = input("Informe o nome ou caminho do arquivo: ")
+            agenda_para_json(nome_arquivo, agenda)
+        elif op == 10:
+            nome_arquivo = input("Informe o nome ou caminho do arquivo: ")
+            agenda = json_para_agenda(nome_arquivo)
+        elif op == 11:
+            print("Saindo do sistema")
+            break
         else:
             print("Opção inválida! Informe uma opção existente.")
 

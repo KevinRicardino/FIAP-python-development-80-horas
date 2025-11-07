@@ -1,0 +1,19 @@
+{
+    "André David": {
+        "telefone": [
+            "11 - 9567-1234",
+            "11 - 1234-5678"
+        ],
+        "email": [
+            "ANDRE.DAVID@FIAP.COM.BR"
+        ],
+        "endereco": [
+            "AV LINS DE VASCONCELOS, 1222"
+        ]
+    },
+    "Darth Vader": {
+        "endereco": [
+            "ESTRELA DA MORTE"
+        ]
+    }
+}
